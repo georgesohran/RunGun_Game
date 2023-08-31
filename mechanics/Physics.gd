@@ -3,26 +3,6 @@ class_name Physics
 
 var active_forces = []
 
-#
-#var direction:Vector2
-#var power:float
-#var friction:float
-#var gravity_direction:Vector2 = Vector2.ZERO
-#var force:Vector2 = direction*power
-#
-#func apply_friction():
-#	power *= friction
-#func apply_gravity():
-#	direction = (direction - gravity_direction)
-#
-#func get_force():
-#	force = direction*power
-#	return force
-#
-#func _init(dir:Vector2,fce:float):
-#	direction = dir
-#	power = fce
-
 class Force:
 	var direction:Vector2
 	var force:float 

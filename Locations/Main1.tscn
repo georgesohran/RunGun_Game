@@ -6,7 +6,7 @@
 [node name="Main1" type="Node2D"]
 
 [node name="Icon" type="Sprite" parent="."]
-position = Vector2( -8.00012, -24 )
+position = Vector2( -8, -40 )
 scale = Vector2( 34.3613, 20.375 )
 texture = ExtResource( 2 )
 
