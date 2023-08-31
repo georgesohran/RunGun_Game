@@ -9,13 +9,13 @@
 config_version=4
 
 _global_script_classes=[ {
-"base": "KinematicBody2D",
-"class": "Entity",
+"base": "Reference",
+"class": "Physics",
 "language": "GDScript",
-"path": "res://mechanics/Entity.gd"
+"path": "res://mechanics/Physics.gd"
 } ]
 _global_script_class_icons={
-"Entity": ""
+"Physics": ""
 }
 
 [application]

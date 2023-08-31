@@ -24,7 +24,12 @@ hframes = 9
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
 
-[node name="RayCast2D" type="RayCast2D" parent="."]
+[node name="Left" type="RayCast2D" parent="."]
 position = Vector2( -9, 0 )
 enabled = true
-cast_to = Vector2( 0, 19 )
+cast_to = Vector2( 0, 16 )
+
+[node name="Right" type="RayCast2D" parent="."]
+position = Vector2( 9, 0 )
+enabled = true
+cast_to = Vector2( 0, 16 )
