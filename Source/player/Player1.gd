@@ -15,9 +15,11 @@ func _physics_process(delta):
 	var move_vector:Vector2
 	
 	if $Left.is_colliding() or $Right.is_colliding():
+		$Sprite.play("Run")
 		run.add_aceleration(1.09)
 		run.force = clamp(run.force,1,MAX_SPEED)
 	else:
+		$Sprite.play("InAir")
 		run.add_friction(0.99)
 		gravity.add_aceleration(1.02)
 	if Input.is_action_just_pressed("shoot") and can_shoot:

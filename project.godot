@@ -12,7 +12,7 @@ _global_script_classes=[ {
 "base": "Reference",
 "class": "Physics",
 "language": "GDScript",
-"path": "res://mechanics/Physics.gd"
+"path": "res://Source/mechanics/Physics.gd"
 } ]
 _global_script_class_icons={
 "Physics": ""
@@ -21,7 +21,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Run Gun"
-run/main_scene="res://Locations/Main1.tscn"
+run/main_scene="res://Source/Levels/Main1.tscn"
 config/icon="res://icon.png"
 
 [display]
