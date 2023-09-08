@@ -1,8 +1,9 @@
 extends Position2D
 
-export(int) var damage
-export(float) var soot_recharge
-export(Vector2) var shoot_direction
+export(float) var damage
+export(float) var recharge_time = 1.2
+var knockback_force = 230
+var shoot_direction:Vector2
 
 func _physics_process(delta):
 	shoot_direction = get_global_mouse_position()

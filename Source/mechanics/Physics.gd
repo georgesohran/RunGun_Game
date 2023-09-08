@@ -14,7 +14,7 @@ class Force:
 			force *= fri
 	
 	func add_aceleration(acel:float = aceleration):
-		if force < 300 :
+		if force <= 300 :
 			force *= acel
 	
 	func get_force():
