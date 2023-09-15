@@ -5,23 +5,24 @@ var active_forces = []
 
 class Force:
 	var direction:Vector2
-	var force:float 
+	var power:float 
 	var friction:float = 0.98
 	var aceleration:float = 1.02
+	var force = direction * power
 	
 	func add_friction(fri:float = friction):
-		if force >= 0.1:
-			force *= fri
+		if power >= 0.1:
+			power *= fri
 	
 	func add_aceleration(acel:float = aceleration):
-		if force <= 300 :
-			force *= acel
+		if power <= 300 :
+			power *= acel
 	
 	func get_force():
-		return direction*force
+		return direction * power
 	
-	func _init(dir:Vector2,force:float):
+	func _init(dir:Vector2,power:float):
 		direction = dir
-		self.force = force
+		self.power = power
 	
 	

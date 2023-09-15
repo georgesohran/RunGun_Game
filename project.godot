@@ -24,6 +24,10 @@ config/name="Run Gun"
 run/main_scene="res://Source/Levels/Main1.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+PlayerStats="*res://Source/mechanics/PlayerStats.gd"
+
 [display]
 
 window/size/width=341
@@ -49,6 +53,9 @@ shoot={
 
 2d_physics/layer_1="world"
 2d_physics/layer_2="player"
+2d_physics/layer_3="enemy"
+2d_physics/layer_4="player_hurt"
+2d_physics/layer_5="enemy_hurt"
 
 [physics]
 

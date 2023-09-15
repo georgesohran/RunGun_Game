@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Block4(5Spike).png-cd14e8d58d762da5b092afff1b9ff7b4.stex"
+path="res://.import/full_heart.png-1cddd1839e765fa04463b42fdaf4708f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Blocks/Tutorial/Block4(5Spike).png"
-dest_files=[ "res://.import/Block4(5Spike).png-cd14e8d58d762da5b092afff1b9ff7b4.stex" ]
+source_file="res://Art/GUI/full_heart.png"
+dest_files=[ "res://.import/full_heart.png-1cddd1839e765fa04463b42fdaf4708f.stex" ]
 
 [params]
 
