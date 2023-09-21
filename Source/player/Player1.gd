@@ -5,6 +5,7 @@ const MAX_SPEED = 100
 export var speed = 100
 export var gravity_force = 60
 export var bounce_force = 50
+export var jump_force = 200
 
 var gravity = Physics.Force.new(Vector2.DOWN,gravity_force)
 var run = Physics.Force.new(Vector2.RIGHT,speed)
@@ -35,7 +36,6 @@ func _physics_process(delta):
 		run.add_friction(0.99)
 		gravity.add_aceleration(1.03)
 		
-		
 	if $Bouncing/Up.is_colliding():
 		active_forces.append(Physics.Force.new(Vector2.DOWN,bounce_force))
 	if $Bouncing/Forward.is_colliding():
@@ -44,10 +44,14 @@ func _physics_process(delta):
 		active_forces.append(Physics.Force.new(Vector2.RIGHT,bounce_force))
 		
 	if Input.is_action_just_pressed("shoot") and can_shoot:
+		$Gun.shoot()
 		shoot_knockback = Physics.Force.new((-to_local($Gun.shoot_direction)).normalized(),$Gun.knockback_force)
 		active_forces.append(shoot_knockback)
 		can_shoot = false
 		$ShootTimer.start($Gun.recharge_time)
+	
+	if Input.is_action_just_pressed("jump") and ($Left.is_colliding() or $Right.is_colliding()):
+		active_forces.append(Physics.Force.new(Vector2.UP,jump_force))
 	
 	move_vector += gravity.get_force()
 	move_vector += run.get_force()
