@@ -58,27 +58,30 @@ moving_platform_apply_velocity_on_leave = 2
 script = ExtResource( 2 )
 
 [node name="Sprite" type="AnimatedSprite" parent="."]
+position = Vector2( 0, -14 )
 frames = SubResource( 9 )
 animation = "Run"
 frame = 2
 
 [node name="Head" type="CollisionShape2D" parent="."]
-position = Vector2( 0, -0.5 )
+position = Vector2( 0, -14.5 )
 shape = SubResource( 1 )
 
 [node name="Gun" parent="." instance=ExtResource( 1 )]
+position = Vector2( 0, -14 )
 
 [node name="Left" type="RayCast2D" parent="."]
-position = Vector2( -9, 5 )
+position = Vector2( -9, -9 )
 enabled = true
 cast_to = Vector2( 0, 10 )
 
 [node name="Right" type="RayCast2D" parent="."]
-position = Vector2( 9, 5 )
+position = Vector2( 9, -9 )
 enabled = true
 cast_to = Vector2( 0, 10 )
 
 [node name="Bouncing" type="Node2D" parent="."]
+position = Vector2( 0, -14 )
 
 [node name="Back" type="RayCast2D" parent="Bouncing"]
 position = Vector2( -5, 0 )
@@ -98,11 +101,12 @@ cast_to = Vector2( 5, 0 )
 [node name="ShootTimer" type="Timer" parent="."]
 
 [node name="Hurtbox" parent="." instance=ExtResource( 4 )]
+position = Vector2( 0, -14 )
 collision_layer = 8
 collision_mask = 0
 
 [node name="CollisionShape2D" parent="Hurtbox" index="0"]
-position = Vector2( 0, 5.25 )
+position = Vector2( 0, 5 )
 shape = SubResource( 11 )
 
 [connection signal="timeout" from="ShootTimer" to="." method="_on_ShootTimer_timeout"]
