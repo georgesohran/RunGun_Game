@@ -16,7 +16,6 @@ var active_forces = []
 var can_shoot = true
 
 func _ready():
-	position = $"../StartPosition".position
 	PlayerStats.connect("no_health",self,"death")
 
 func _physics_process(delta):
@@ -44,7 +43,7 @@ func _physics_process(delta):
 		active_forces.append(Physics.Force.new(Vector2.RIGHT,bounce_force))
 		
 	if Input.is_action_just_pressed("shoot") and can_shoot:
-		$Gun.shoot()
+		$Gun.shoot($Gun.shoot_direction)
 		shoot_knockback = Physics.Force.new((-to_local($Gun.shoot_direction)).normalized(),$Gun.knockback_force)
 		active_forces.append(shoot_knockback)
 		can_shoot = false

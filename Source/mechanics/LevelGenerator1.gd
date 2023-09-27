@@ -13,6 +13,7 @@ var blocks = [
 	]
 
 func _ready():
+	get_node("Player1").position = get_node("StartPosition").position
 	var RNG = RandomNumberGenerator.new()
 	RNG.randomize()
 	for i in range(test_with):
@@ -23,6 +24,7 @@ func _ready():
 	
 	get_node("BackGround").scale.x = test_with
 	get_node("BackGround").global_position.x = (test_with/2)*block_with
+	get_node("BackGround").global_position.y = 0
 
 func _process(delta):
 	get_node("BackGround").global_position.y = get_node("Player1").global_position.y/2

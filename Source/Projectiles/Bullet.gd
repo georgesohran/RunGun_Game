@@ -1,7 +1,11 @@
 extends KinematicBody2D
 
-var direction = Vector2.LEFT
+var direction
+var speed = 300
 
 func _process(delta):
-	translate(direction*get_parent().bullet_speed*delta)
-	
+	translate(direction*speed*delta)
+
+
+func _on_Hurtbox_body_entered(body):
+	queue_free()
