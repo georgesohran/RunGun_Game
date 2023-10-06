@@ -1,4 +1,4 @@
-extends KinematicBody2D
+extends Node2D
 
 var direction
 var speed = 300
@@ -6,6 +6,5 @@ var speed = 300
 func _process(delta):
 	translate(direction*speed*delta)
 
-
-func _on_Hurtbox_body_entered(body):
+func _on_Hitbox_body_entered(body):
 	queue_free()

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Spike.png-8dd19a4521a103d3c1c4e5587c3105fd.stex"
+path="res://.import/Small_ridge.png-ab212b2904cf28c6ffea35051d48542f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Blocks/Tutorial/Components/Spike.png"
-dest_files=[ "res://.import/Spike.png-8dd19a4521a103d3c1c4e5587c3105fd.stex" ]
+source_file="res://Art/Projectiles/Blocks/Tutorial/Components/Small_ridge.png"
+dest_files=[ "res://.import/Small_ridge.png-ab212b2904cf28c6ffea35051d48542f.stex" ]
 
 [params]
 

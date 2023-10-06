@@ -69,8 +69,6 @@ func _on_ShootTimer_timeout():
 
 func _on_Hurtbox_area_entered(area):
 	PlayerStats.health -= 1
-	if PlayerStats.health > 0 :
-		position = get_parent().get_node("StartPosition").position
 
 func death():
 	get_tree().change_scene("res://Source/GUI/DeathScren.tscn")

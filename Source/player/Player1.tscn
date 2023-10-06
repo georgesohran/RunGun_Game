@@ -1,9 +1,17 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Source/guns/Gun.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Source/player/Player1.gd" type="Script" id=2]
 [ext_resource path="res://Art/runners/runner1.png" type="Texture" id=3]
 [ext_resource path="res://Source/mechanics/Hurtbox.tscn" type="PackedScene" id=4]
+
+[sub_resource type="AtlasTexture" id=12]
+atlas = ExtResource( 3 )
+region = Rect2( 224, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=13]
+atlas = ExtResource( 3 )
+region = Rect2( 256, 0, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=2]
 atlas = ExtResource( 3 )
@@ -35,6 +43,11 @@ region = Rect2( 160, 0, 32, 32 )
 
 [sub_resource type="SpriteFrames" id=9]
 animations = [ {
+"frames": [ SubResource( 12 ), SubResource( 13 ) ],
+"loop": true,
+"name": "Idle",
+"speed": 5.0
+}, {
 "frames": [ SubResource( 2 ) ],
 "loop": true,
 "name": "InAir",
@@ -60,29 +73,28 @@ script = ExtResource( 2 )
 bounce_force = 40
 
 [node name="Sprite" type="AnimatedSprite" parent="."]
-position = Vector2( 0, -14 )
+position = Vector2( 0, -1 )
 frames = SubResource( 9 )
-animation = "Run"
-frame = 2
+animation = "Idle"
 
 [node name="Head" type="CollisionShape2D" parent="."]
-position = Vector2( 0, -14.5 )
+position = Vector2( 0, -1.5 )
 shape = SubResource( 1 )
 
 [node name="Left" type="RayCast2D" parent="."]
-position = Vector2( -9, -9 )
+position = Vector2( -9, 4 )
 enabled = true
 cast_to = Vector2( 0, 10 )
 collision_mask = 5
 
 [node name="Right" type="RayCast2D" parent="."]
-position = Vector2( 9, -9 )
+position = Vector2( 9, 4 )
 enabled = true
 cast_to = Vector2( 0, 10 )
 collision_mask = 5
 
 [node name="Bouncing" type="Node2D" parent="."]
-position = Vector2( 0, -14 )
+position = Vector2( 0, -1 )
 
 [node name="Back" type="RayCast2D" parent="Bouncing"]
 position = Vector2( -5, 0 )
@@ -103,7 +115,7 @@ cast_to = Vector2( 5, 0 )
 collision_mask = 5
 
 [node name="Hurtbox" parent="." instance=ExtResource( 4 )]
-position = Vector2( 0, -14 )
+position = Vector2( 0, -1 )
 collision_layer = 8
 collision_mask = 0
 
@@ -112,7 +124,7 @@ position = Vector2( 0, 5 )
 shape = SubResource( 11 )
 
 [node name="Gun" parent="." instance=ExtResource( 1 )]
-position = Vector2( 0, -14 )
+position = Vector2( 0, -1 )
 
 [node name="ShootTimer" type="Timer" parent="."]
 
