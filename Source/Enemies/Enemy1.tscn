@@ -51,6 +51,7 @@ shape = SubResource( 1 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 6 )
 animation = "drive"
+frame = 3
 playing = true
 
 [node name="Hurtbox" parent="." instance=ExtResource( 4 )]
@@ -70,6 +71,7 @@ shape = SubResource( 8 )
 __meta__ = {
 "_gizmo_extents_": 25.0
 }
+recharge_time = 3.0
 
 [node name="Right" type="RayCast2D" parent="."]
 position = Vector2( 7, 13 )

@@ -2,7 +2,7 @@ extends Position2D
 
 
 export(float) var recharge_time = 1
-export(float) var knockback_force = 230
+export(float) var knockback_force = 260
 export(float) var bullet_speed = 400
 var shoot_direction:Vector2
 
